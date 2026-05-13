@@ -58,8 +58,11 @@ if st.button("Search News"):
             )
 
             # 결과 출력
-            st.subheader("Search Result")
-            st.write(response.text)
+st.subheader("Search Result")
+
+result_text = response.text.encode("ascii", "ignore").decode()
+
+st.text(result_text)
 
     else:
         st.warning("Please enter a keyword.")
